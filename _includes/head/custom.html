@@ -1,4 +1,6 @@
 <!-- start custom head snippets -->
+
+<script src="{{ '/assets/js/some-script.js' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}"></script>
 {% if page.use_math %} {% include mathjax-support.html %} {% endif %}
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
 
