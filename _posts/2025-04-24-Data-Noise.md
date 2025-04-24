@@ -2,7 +2,7 @@
 layout: single
 title: "Data Noise"
 categories: NLP
-tag: [machine-learning]
+tag: [Machine-Learning]
 use_math: true
 ---
 
