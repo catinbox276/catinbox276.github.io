@@ -2,7 +2,7 @@
 layout: single
 title: "Forward & Back propagation"
 categories: Deep-learning
-tag: [Deep-learning,MLOps]
+tag: [Deep-learning,패스트캠퍼스,패스트캠퍼스AI부트캠프,업스테이지패스트캠퍼스,UpstageAILab,국비지원,패스트캠퍼스업스테이지에이아이랩,패스트캠퍼스업스테이지부트캠프]
 use_math: true
 ---
 
