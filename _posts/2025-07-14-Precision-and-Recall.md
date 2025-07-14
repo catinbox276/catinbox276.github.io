@@ -6,9 +6,6 @@ tag: [Generative-Ai,패스트캠퍼스,패스트캠퍼스AI부트캠프,업스�
 use_math: true
 ---
 
-다음은 업로드하신 자료의 핵심 내용을 정리한 것입니다:
-
----
 
 ## 생성 모델의 평가 지표: 정밀도(Precision)와 재현율(Recall)
 
