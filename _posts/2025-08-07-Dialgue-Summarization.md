@@ -73,3 +73,55 @@ output : 249개의 대화 요약문
 - topic 히스토그램
 
 ![](/assets/images/2025-08-07/topic_histogram.png)
+
+- 화자 빈도수
+
+![](/assets/images/2025-08-07/person_count.png)
+
+- 화자 2명 기준으로 문답 횟수 히스토그램
+
+![](/assets/images/2025-08-07/person_histograme.png)
+
+- 요약 문자 길이 히스토그램
+
+![](/assets/images/2025-08-07/summary_histogram.png)
+
+- dialogue, summary 의 문자 길이 상관계수 (피어슨) :  0.48041325902248583
+
+![](/assets/images/2025-08-07/dialogue-summary_length.png)
+
+## EDA 해석 및 가설 수립
+- topic 5미만인의 topic의 종류가 9000개 이상으로 불균형 문제가 있다
+- 부존한 topic을 기반하여 데이터를 생성
+- 생성시 요약길이, 대화 횟수는 torch.random 사용하요 train,val 과 동일한 비율로 생성 
+
+## AI Data Create
+
+
+- 프롬프트 v1 trina 12,457 + 32,881 : 46.9775<br>
+결과 : train,val 달리 요약에 화자의 명창과 사건중심요약 방식임을 확인
+![](/assets/images/2025-08-07/datav1_prompt.png)
+![](/assets/images/2025-08-07/datav1_output.png)
+
+- 프롬프트 v2 + 사건중심, 화자 태그 추가 + 3개 데이터 생성 78개 json<br>변환 실패 12,457 +  51,753 : 48.1078<br>결과 : 성능 향상
+
+![](/assets/images/2025-08-07/datav2_prompt.png)
+![](/assets/images/2025-08-07/datav2_output.png)
+
+
+- 맨토님의 조언중 잘못된 요약이 있는것을 확인하여 프롬프트를 활용하여 train 검토를<br>통해 train
+![](/assets/images/2025-08-07/train_data_examine_prompt1.png)
+![](/assets/images/2025-08-07/train_data_examine_prompt2.png)
+![](/assets/images/2025-08-07/train_data_examine_output.png)
+![](/assets/images/2025-08-07/train_data_examine_count.png)
+
+- 학습 방법
+    - A : 일치
+    - B : 일치 + 부분일치
+    - A + DataV2
+    - B + DataV2
+
+- 결과 : 체출시간이 지나 정확한 결과를 구하지 못했음
+
+![](/assets/images/2025-08-07/bad_end.png)
+
